@@ -1,6 +1,7 @@
 
 body {
 	padding-top:5rem;
+	font-size: 1.2rem !important;
 }
 .mainheading {
 	padding:1rem 0rem;
@@ -10,18 +11,19 @@ body {
 color: grey;
 }
 a {
-	color:#014c8c;
+	color: rgb(12 69 141 / 80%);
 }
-a,a:hover {
+a:hover {
 	transition:all 0.2s;
+	color: rgb(12 69 141) !important;
 }
 .mediumnavigation {
-	background:rgba(255,255,255,.97);
+	background:rgb(247 244 244 / 97%);
 	box-shadow:0 2px 2px -2px rgba(0,0,0,.15);
 }
 
 .article-post a{
-	color: rgba(0,0,0,.8);
+	color: rgb(58 150 221);
 }
 
 section {
@@ -227,7 +229,7 @@ span.post-name a,span.post-read-more a:hover {
 	color:rgba(0,0,0,.8);
 }
 blockquote {
-	border-left:4px solid #00ab6b;
+	border-left:4px solid #f7630c;
 	padding:0 20px;
 	font-style:italic;
 	color:rgba(0,0,0,.5);
