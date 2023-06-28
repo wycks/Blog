@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../assets/img/favicon.png">
+<title>Labcabin.eth - ✍️ Site Build </title>
+<!-- Bootstrap core CSS -->
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+<!-- Fonts -->
+<link href="../assets/css/font-awesome.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="../assets/css/mediumish.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Begin Nav
+================================================== -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+<div class="container">
+	<!-- Begin Logo -->
+	<!-- End Logo -->
+	<div>
+		<!-- Begin Menu -->
+		<ul class="navbar-nav">
+			<li>
+				<li><a href="../index.html">🏡</a></li>
+			</li>
+		</ul>
+		<!-- End Menu -->
+	</div>
+</div>
+</nav>
+<!-- End Nav
+================================================== -->
+
+<!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+		<!-- Begin Fixed Left Share -->
+		<div class="col-md-2 col-xs-12">
+			<div class="share">
+			</div>
+		</div>
+		<!-- End Fixed Left Share -->
+		<!-- Begin Post -->
+		<div class="col-md-8 col-md-offset-2 col-xs-12">
+			<div class="mainheading">
+
+				<!-- Begin Top Meta -->
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="../assets/img/avatar.jpg" alt="Sal">
+					</div>
+					<div class="col-md-10">
+						<a href="https://twitter.com/wycks_s" >labcabin.eth</a> 🌎 <a href="https://twitter.com/wycks_s" >@wycks_s</a>  
+						<pre>IPFS: QmR5FQpa5BUFFksf4zdgcLohdourJ3s8BDRCAtiFSZT1Go</pre>
+					</div>
+				</div>
+				<!-- End Top Meta -->
+				<h1 class="posttitle">How is this website built?</h1>
+			</div>
+
+			<!-- Begin Post Content -->
+			<div class="article-post">
+
+				<p>
+					Traversing down the spiral of building a website on the blockchain I had two main goals in mind: 
+				</p>
+
+				<ul>
+					<li>The website (DNS + Server + Storage) must be on the actual blockchain.</li>
+					<li>It must use the absolute minimal amount of tooling, a trust no one approach.</li>
+				</ul>
+
+				<p>Surprisingly the options for building a decentralized website is fraught with issues, after decades of P2P networks and the mass influx of crypto projects in recent years, the state of building a website on the blockchain is kinda of dismal. For now let’s just dive into how this site was built.</p>
+
+				<h4>Hosting </h4>
+				<p>
+					This site's files are all hosted using <a href="https://ipfs.tech">IPFS</a>, a P2P decentralized protocol that has been around for many years and is developed by Protocol Labs. IPFS is strictly a protocol and has no incentive mechanism for participants to secure and run any actual network. The responsibility of running a network instead is handled by the likes of <a href="https://filecoin.io/">Filecoin</a> and others,  typically build using Proof of Stake. IPFS is great at serving resilient censorship resistant files and delivering them at high speed based on user location, similar to how torrents work. But it's not so great for archiving files, which is what most websites are doing, in other words, IPFS is a transport layer and not a storage layer.
+				</p>
+
+				<h4>Managing</h4>
+
+
+				<p>The site is managed using <a href="https://fleek.co/ ">Fleek</a> which to be fair, is doing all the heavy lifting. Fleek has a simple dashboard which makes connecting whatever you build your website with a breeze. Under the hood Fleek is basically integrating a web server with IPFS, and I’m currently using Github to manage this automatically. Fleek also supports other options such as ICP and Arweave. You can view the site files here, <a href="https://github.com/wycks/Blog">https://github.com/wycks/Blog</a></p>
+
+				<img src="img/fleek.jpg">
+
+				<h4>DNS</h4>
+
+				<p>The site’s DNS is managed using an .eth address from the <a href="https://ens.domains/">Ethereum Naming Service</a>. Most browsers, like Google Chrome, do not support resolving .eth domains, so the site can also be reached by appending .limo to the end of the URL. <a href="https://eth.limo/">ETH.LIMO</a> is a privacy preserving ENS gateway that serves .eth addresses to regular browsers. For example: <a href="https://labcabin.eth.limo">https://labcabin.eth.limo</a></p> 
+
+				<h4>But isn't some of this Centralized?</h4>
+
+				<p>Yes ! There are several centralized areas once you peek under the hood, namely Fleek, various DNS gateways, and Github. 
+					<ul>
+						<li>If Fleek disappears my site and files will die, unless I pay a <a href="https://docs.ipfs.tech/how-to/pin-files">pinning service</a>. I would also have to switch around the DNS settings for any new setup. </li> 
+						<li>DNS is being served via centralized domains run by ICANN with Fleek using .co and ENS using .domains, to Fleeks credit they are moving to a fully decentralized system, fleek.xyz.</li>
+					</ul>
+					
+					It's important to note the role of gateways in the above setup. In its current state IPFS is very slow at serving website content, so Fleek runs their own IPFS gateway + nodes + caching system so the content loads quicker and more reliably.</p>
+
+				<h4>What Build? 🛠️</h4>
+				<p>The site itself uses a very simple approach, after all it’s just writing..
+				</p>
+				<ul>
+					<li>Only HTML/CSS </li>
+					<li>No build scripts, write directly in the HTML files.</li>
+					<li>No external assets</li>
+					<li>No need for any local software or build scripts, edit the site in notepad, Github,  or directly in any browser.</li>
+					<li>You don't even need a web server, it's just HTML files !</li>
+				</ul>
+
+				<p>This gives the site maximum security with zero reliance on the myriad of tools typically used to build websites. The flexibility of being able to edit them practically anywhere is refreshing. It also has an extremely small footprint with the average page size (without images) being under 9kb ! The page size is the server files size, no need for a 10 MB CMS or MB+ headless CMS with build requirements !</p>
+
+				<h4>Caveats</h4>
+				<p>Besides the current reliance on centralized DNS/Gateways and Fleek itself,  which are  all being worked on, the main caveat to this site is it’s currently using Git and Github, both completely unnecessary for managing a blog. Right now it’s the easiest way to connect Fleek and most importantly push updates to IPFS so the correct content is served. I will be looking into removing both Git and Github as Fleek moves to a more decentralized model soon.</p>
+
+
+				<img src="img/html.jpg" style="display: block;margin-left: auto; margin-right: auto;"> 
+
+			</div>
+			<!-- End Post Content -->
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+<!-- Begin Footer
+================================================== -->
+<div class="container">
+	<div class="footer">
+		<p class="pull-left">
+			 &copy; <a href="../index.html">Home</a>
+		</p>
+		<div class="clearfix">
+		</div>
+	</div>
+</div>
+<!-- End Footer
+================================================== -->
+</body>
+</html>

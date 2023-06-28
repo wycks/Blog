@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="../assets/img/favicon.ico">
-<title>Eth MEV page</title>
+<link rel="icon" href="../assets/img/favicon.png">
+<title>Labcabin.eth - ✍️ MEV </title>
 <!-- Bootstrap core CSS -->
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 <!-- Fonts -->
@@ -27,7 +27,7 @@
 		<!-- Begin Menu -->
 		<ul class="navbar-nav">
 			<li>
-				<li><a href="#">🏡</a></li>
+				<li><a href="../index.html">🏡</a></li>
 			</li>
 		</ul>
 		<!-- End Menu -->
@@ -54,12 +54,11 @@
 				<!-- Begin Top Meta -->
 				<div class="row post-top-meta">
 					<div class="col-md-2">
-						<img class="author-thumb" src="../assets/img/toot.jpg" alt="Sal">
+						<img class="author-thumb" src="../assets/img/avatar.jpg" alt="Sal">
 					</div>
 					<div class="col-md-10">
-						<a class="link-dark"></a> Surfing on Sine Waves. 🦇🔊
-						<br>
-						<a href="https://twitter.com/wycks_s" >@wycks_s</a>
+						<a href="https://twitter.com/wycks_s" >labcabin.eth</a> 🌎 <a href="https://twitter.com/wycks_s" >@wycks_s</a>  
+						<pre>IPFS: QmR5FQpa5BUFFksf4zdgcLohdourJ3s8BDRCAtiFSZT1Go</pre>
 					</div>
 				</div>
 				<!-- End Top Meta -->
@@ -69,10 +68,13 @@
 			<!-- Begin Post Content -->
 			<div class="article-post">
 
-				<p>One common question that often arises in discussions about crypto is the significance of a blockchain in terms of practical use. The best example to address this concern is arguably the most popular one: Ethereum. As the leading Proof of Stake blockchain, Ethereum excels in terms of usage and development, this is evident when we look at the daily transaction volume. In the last 1.5 years, Ethereum has averaged  approximately 1.1 Million transactions per day. [source + graphic : https://etherscan.io/chart/tx ]. </p>
+				<p>One common question that often arises in discussions about crypto is the significance of a blockchain in terms of practical use. The best example to address this concern is arguably the most popular one: Ethereum. As the leading Proof of Stake blockchain, Ethereum excels in terms of usage and development, this is evident when we look at the daily transaction volume. In the last 1.5 years, Ethereum has averaged  approximately 1.1 Million transactions per day. </p>
+
+				<img src="img/eth-mev-daily.jpg">
+				<div class="source"> Source : <a href="https://etherscan.io/">Etherscan.io</a></div>   
 
 				<p>
-					When you interact with Ethereum using your wallet, the process behind the scenes is abstracted, which contributes to a positive user experience.When driving a car, we don't necessarily need to comprehend the inner workings of the engine; it simply works and the consequences of not knowing are relatively low. However, when it comes to crypto, a different mindset is useful —familiarising yourself with how protocols operate is crucial to grasp the fundamentals of user empowerment, security, privacy, and decentralisation.
+					When you interact with Ethereum using your wallet, the process behind the scenes is abstracted, which contributes to a positive user experience. When driving a car, we don't necessarily need to comprehend the inner workings of the engine; it simply works and the consequences of not knowing are relatively low. However, when it comes to crypto, a different mindset is useful —familiarising yourself with how protocols operate is crucial to grasp the fundamentals of user empowerment, security, privacy, and decentralisation.
 				</p>
 				<p>There's an assumption that when you click a button, the blockchain verifies your transaction in a trustless way, but what actually happens?</p>
 
@@ -80,6 +82,9 @@
 				<br>
 				<p>Behind the scenes, immediately after you submit a transaction, the “MEV supply chain” kicks in. MEV stands for “Maximal Extractable Value”, it’s important to understand MEV since it affects the security and stability of not only Ethereum but most blockchain networks.</p>
 				<p>Within this supply chain there are multiple components that will take your transaction and do all sorts of things with it, but what are they and how does it work? For the sake of simplicity we can break this supply chain into 5 distinct entities. Lets walk through an example:</p>
+
+				<img src="img/mev-supply-chain.png">
+
 				<ul>
 					<li><b>Wallet</b> - Your wallet securely stores your keys which you use to sign transactions, for example purchasing an NFT requires you sign the transaction with your key. Once signed your transaction is then sent to the network and held in what's called the mempool. The mempool serves as a temporary storage area on the Ethereum network, holding your transaction until processed.</li>
 					<li><b>Searchers</b> - Searchers in the mempool will seek out your transaction, essentially discovering your transaction and ordering it with other transactions into a bundle.</li>
@@ -87,14 +92,24 @@
 					<li><b>Relayers</b> - Relayers often serve as intermediaries between Builders and Validators, they verify the integrity and authenticity of the blocks before they are submitted for validation. They essentially provide a layer of trust between Builders and Validators.</li>
 					<li><b>Validators</b> -  Validators run the Ethereum consensus mechanism, they receive the blocks from Relayers (or directly from builders), verify them, propose them to the network, and attest to new blocks. If everything checks out then your transaction is finalised in a block.This confirmation is typically shown within a few seconds in your wallet and can be verified using a block explorer.</li>
 				</ul>
-				<p>It’s important to note that when the validator attests to the validity of a block, they act in good faith because they have a stake in the game, for Ethereum this is 32 Eth per validator. This incentivises validators to act in the best interest of the network since bad behaviour gets penalised via slashing, and in turn stakers get rewarded for helping secure the network. To see who searchers, builders, relayers,, and validators are, you can check sites such as https://www.rated.network/ which summarises statistics on them. It may come as a surprise to see there are only a few builders and relayers in operation.</p>
-				<p>Hopefully this sheds some light on the basics of how transactions work on the Ethereum network. We have only scratched the surface on the complexities of MEV, as it’s a highly popular and critically important subject. As it stands, the relationships between the above operators is not ideal, they assume trust with each other instead of ensuring it on-chain. There is also a considerable amount of front-running and sandwich attacks occurring, which hurts the user experience and stresses the network, and the current mechanism puts centralising pressure on the whole ecosystem.</p>
+				<p>It’s important to note that when the validator attests to the validity of a block, they act in good faith because they have a stake in the game, for Ethereum this is 32 Eth per validator. This incentivises validators to act in the best interest of the network since bad behaviour gets penalised via slashing, and in turn stakers get rewarded for helping secure the network. To see who searchers, builders, relayers,, and validators are, you can check sites such as <a href="https://www.rated.network">rated.network</a> which summarise statistics on them. It may come as a surprise to see there are only a few builders and relayers in operation.</p>
+				<img src="img/builder.jpg">
+				<div class="source"> Source : <a href="https://www.rated.network">https://www.rated.network</a></div>   
+				<p>Hopefully this sheds some light on the basics of how transactions work on the Ethereum network. We have only scratched the surface on the complexities of MEV, as it’s a highly popular and critically important subject.<b> As it stands, the relationships between the above operators is not ideal, they assume trust with each other instead of ensuring it on-chain.</b> There is also a considerable amount of front-running and sandwich attacks occurring, which hurts the user experience and stresses the network, and the current mechanism puts centralising pressure on the whole ecosystem.</p>
 				<p>The good news is there are healthy debates and solutions being addressed by the Ethereum Foundation, research organisations like Flashbots, Builders and Relayers, as well as many Layer-2’s and the overall Eth community. The primary goal is to deliver the expected value to users the moment they initiate a transaction when clicking a button in their wallet, while staying true to the decentralised nature of the blockchain. Hopefully shedding light on how Ethereum works will help ensure the development is aligned with this core value.</p>
 
+				<p>Into the weeds 🌿</p>
+				
+				<ul>
+					<li><a href="https://ethereum.org/en/developers/docs/mev/">What is MEV? - Eth Foundation</a></li>
+					<li><a href="https://collective.flashbots.net/">Flashbots</a></li>
+					<li><a href="https://notes.ethereum.org/@vbuterin/pbs_censorship_resistance">PBS and Censorship - Eth Foundation</a></li>
+					<li><a href="https://ethresear.ch/t/why-enshrine-proposer-builder-separation-a-viable-path-to-epbs/15710">Why Enshrine Proposer-Builder Separation ? - Eth Foundation</a></li>
+					<li><a href="https://www.rated.network">Rated.network</a></li>
+				</ul>	
 
 			</div>
 			<!-- End Post Content -->
-			<pre>IPFS Hash: QmR5FQpa5BUFFksf4zdgcLohdourJ3s8BDRCAtiFSZT1Go</pre>
 		</div>
 		<!-- End Post -->
 
@@ -107,7 +122,7 @@
 <div class="container">
 	<div class="footer">
 		<p class="pull-left">
-			 &copy;
+			 &copy; <a href="../index.html">Home</a>
 		</p>
 		<div class="clearfix">
 		</div>

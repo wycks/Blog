@@ -26,6 +26,25 @@ a:hover {
 	color: rgb(58 150 221);
 }
 
+.article-post img{
+	max-width:730px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+
+h4{
+	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    padding-bottom: 12px;
+}
+
+.source{
+	font-size: 0.8rem;
+	margin-top: -25px;
+	text-align: right;
+	padding-bottom: 20px;
+	font-style: italic;
+}
+
 section {
 	margin-bottom:20px;
 }
