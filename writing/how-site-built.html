@@ -57,7 +57,7 @@
 						<img class="author-thumb" src="../assets/img/avatar.jpg" alt="Sal">
 					</div>
 					<div class="col-md-10">
-						<a href="https://twitter.com/wycks_s" >labcabin.eth</a> 🌎 <a href="https://twitter.com/wycks_s" >@wycks_s</a>  
+						<a href="https://labcabin.eth.limo/" >labcabin.eth</a> 🌎 <a href="https://twitter.com/wycks_s" >@wycks_s</a>  
 						<pre>IPFS: QmR5FQpa5BUFFksf4zdgcLohdourJ3s8BDRCAtiFSZT1Go</pre>
 					</div>
 				</div>
@@ -77,17 +77,17 @@
 					<li>It must use the absolute minimal amount of tooling, a trust no one approach.</li>
 				</ul>
 
-				<p>Surprisingly the options for building a decentralized website is fraught with issues, after decades of P2P networks and the mass influx of crypto projects in recent years, the state of building a website on the blockchain is kinda of dismal. For now let’s just dive into how this site was built.</p>
+				<p>Surprisingly the options for building a decentralized website is fraught with issues, after decades of P2P networks and the mass influx of crypto projects in recent years, the state of building a website on the blockchain is kinda of dismal. So let’s dive into how this site was built, and leave those issues for another day :) </p>
 
 				<h4>Hosting </h4>
 				<p>
-					This site's files are all hosted using <a href="https://ipfs.tech">IPFS</a>, a P2P decentralized protocol that has been around for many years and is developed by Protocol Labs. IPFS is strictly a protocol and has no incentive mechanism for participants to secure and run any actual network. The responsibility of running a network instead is handled by the likes of <a href="https://filecoin.io/">Filecoin</a> and others,  typically build using Proof of Stake. IPFS is great at serving resilient censorship resistant files and delivering them at high speed based on user location, similar to how torrents work. But it's not so great for archiving files, which is what most websites are doing, in other words, IPFS is a transport layer and not a storage layer.
+					This site's files are all hosted using <a href="https://ipfs.tech">IPFS</a>, a P2P decentralized protocol developed by Protocol Labs that has been around for many years. IPFS is strictly a protocol and has no incentive mechanism for participants to secure and run any actual network. The responsibility of running a network instead is handled by the likes of <a href="https://filecoin.io/">Filecoin</a> and others,  typically build using a consensys mechanism. IPFS is great at serving resilient censorship resistant files, and delivering them at high speed based on user location, similar to how torrents work. But it's not so great for archiving files, which is what most websites meant to be read are doing. In other words, IPFS is a great transport layer, and not a great storage layer.
 				</p>
 
 				<h4>Managing</h4>
 
 
-				<p>The site is managed using <a href="https://fleek.co/ ">Fleek</a> which to be fair, is doing all the heavy lifting. Fleek has a simple dashboard which makes connecting whatever you build your website with a breeze. Under the hood Fleek is basically integrating a web server with IPFS, and I’m currently using Github to manage this automatically. Fleek also supports other options such as ICP and Arweave. You can view the site files here, <a href="https://github.com/wycks/Blog">https://github.com/wycks/Blog</a></p>
+				<p>The site is managed using <a href="https://fleek.co/ ">Fleek</a>, which to be fair, is doing all the heavy lifting. Fleek has a simple dashboard which makes connecting whatever you build your website with a breeze. Under the hood Fleek is basically integrating a web server with IPFS, and I’m currently using Github to manage this automatically. Fleek also supports other options such as ICP and Arweave. You can view the site files here, <a href="https://github.com/wycks/Blog"></a>https://github.com/wycks/Blog, but it's nothing fancy, just HTML, CSS and images.</p>
 
 				<img src="img/fleek.jpg">
 
